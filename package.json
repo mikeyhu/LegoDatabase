@@ -1,0 +1,19 @@
+{
+  "name": "LegoDatabase",
+  "version": "0.0.1",
+  "author": "Mike Hughes",
+  "dependencies" : {
+    "coffee-script": "1.3.x",
+    "express" : "3.0.x",
+    "xml2js" : "0.2.x"
+  },
+  "devDependencies": {
+    "should"    : "1.2.x",
+    "zombie"	: "1.4.x"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
+
