@@ -1,0 +1,29 @@
+<ArrayOfSetData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.brickset.com/webServices/">
+<setData>
+<setID>32</setID>
+<number>10030</number>
+<numberVariant>1</numberVariant>
+<setName>Imperial Star Destroyer</setName>
+<year>2002</year>
+<theme>Star Wars</theme>
+<subtheme>Ultimate Collector Series</subtheme>
+<pieces>3096</pieces>
+<minifigs/>
+<image>true</image>
+<imageFilename>10030-1</imageFilename>
+<thumbnailURL>http://www.1000steine.com/brickset/thumbs/tn_10030-1_jpg.jpg</thumbnailURL>
+<imageURL>http://www.1000steine.com/brickset/images/10030-1.jpg</imageURL>
+<bricksetURL>http://www.brickset.com/detail/?Set=10030-1</bricksetURL>
+<own>false</own>
+<want>false</want>
+<qtyOwned>0</qtyOwned>
+<userNotes/>
+<UKRetailPrice>249.99</UKRetailPrice>
+<USRetailPrice>269.99</USRetailPrice>
+<CARetailPrice/>
+<instructionsAvailable>true</instructionsAvailable>
+<EAN/>
+<UPC>673419014472</UPC>
+<lastUpdated>2007-09-28T18:25:49</lastUpdated>
+</setData>
+</ArrayOfSetData>

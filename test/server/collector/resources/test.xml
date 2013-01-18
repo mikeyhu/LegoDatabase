@@ -1,0 +1,29 @@
+<ArrayOfSetData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.brickset.com/webServices/">
+<setData>
+<setID>1</setID>
+<number>1</number>
+<numberVariant>1</numberVariant>
+<setName>Test set</setName>
+<year>2013</year>
+<theme>Test theme</theme>
+<subtheme>Test subtheme</subtheme>
+<pieces></pieces>
+<minifigs/>
+<image>true</image>
+<imageFilename>10030-1</imageFilename>
+<thumbnailURL></thumbnailURL>
+<imageURL></imageURL>
+<bricksetURL></bricksetURL>
+<own>false</own>
+<want>false</want>
+<qtyOwned>0</qtyOwned>
+<userNotes/>
+<UKRetailPrice></UKRetailPrice>
+<USRetailPrice></USRetailPrice>
+<CARetailPrice/>
+<instructionsAvailable>true</instructionsAvailable>
+<EAN/>
+<UPC></UPC>
+<lastUpdated></lastUpdated>
+</setData>
+</ArrayOfSetData>
