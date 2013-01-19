@@ -24,3 +24,14 @@ describe 'A bulk collector', ->
 			done()
 	it 'should be able to generate a url to brickset',->
 		bulkcollector.url("10030").should.equal("http://www.brickset.com/webservices/brickset.asmx/search?apiKey=&userHash=&query=&theme=&subtheme=&year=&owned=&wanted=&setNumber=10030-1")
+	it 'should be able to retrieve a set by sending in an array',(done)->
+		@bc.collectSets ["test"],(err,result)->
+			result.length.should.equal(1)
+			result[0].number.should.eql(["1"])
+			done()
+	it 'should be able to retrieve more than one set',(done)->
+		@bc.collectSets ["10030","928"],(err,result)->
+			result.length.should.equal(2)
+			result[0].number.should.eql(["10030"])
+			result[1].number.should.eql(["928"])
+			done()

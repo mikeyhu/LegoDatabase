@@ -1,6 +1,6 @@
 {exec} = require "child_process"
 
-REPORTER = "min"
+REPORTER = "spec"
 
 task "test", "run all tests", ->
   invoke "unit"
@@ -13,7 +13,6 @@ task "unit", "run unit tests", ->
     --require coffee-script 
     --colors
     --recursive
-    -R spec
   ", (err, output) ->
     throw err if err
     console.log output

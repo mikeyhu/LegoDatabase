@@ -4,6 +4,8 @@ http = require 'http'
 
 #example url:
 #	http://www.brickset.com/webservices/brickset.asmx/search?apiKey=&userHash=&query=&theme=&subtheme=&year=&owned=&wanted=&setNumber=10030-1
+exports.url = (urlGenerator)-> "http://www.brickset.com/webservices/brickset.asmx/search?apiKey=&userHash=&query=&theme=&subtheme=&year=&owned=&wanted=&setNumber=#{urlGenerator}-1"
+
 exports.createBulkCollector = (urlGenerator)->
 
 	setInformation:(setNumber,fun)->
@@ -21,6 +23,14 @@ exports.createBulkCollector = (urlGenerator)->
 	parseXml:(data,fun) ->
 		parser = new xml2js.Parser()
 		parser.parseString data, (err,result)->
-			fun(err,result.ArrayOfSetData.setData[0])
+			throw err if err
+			fun(err,result?.ArrayOfSetData.setData[0])
 
-exports.url = (urlGenerator)-> "http://www.brickset.com/webservices/brickset.asmx/search?apiKey=&userHash=&query=&theme=&subtheme=&year=&owned=&wanted=&setNumber=#{urlGenerator}-1"
+	collectSets:(listOfSetNumbers,fun,current=0,listOfResults=[])->
+		if listOfSetNumbers.length <= current then fun(null,listOfResults)
+		else
+			@setInformation listOfSetNumbers[current], (err,result)=>
+				throw err if err
+				listOfResults.push result 
+				process.nextTick ()=>
+					@collectSets listOfSetNumbers,fun,current+1,listOfResults

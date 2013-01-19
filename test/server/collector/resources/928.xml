@@ -1,0 +1,29 @@
+<ArrayOfSetData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.brickset.com/webServices/">
+<setData>
+<setID>4532</setID>
+<number>928</number>
+<numberVariant>1</numberVariant>
+<setName>Space Cruiser And Moonbase</setName>
+<year>1979</year>
+<theme>Space</theme>
+<subtheme>Classic</subtheme>
+<pieces>338</pieces>
+<minifigs>4</minifigs>
+<image>true</image>
+<imageFilename>0928-1</imageFilename>
+<thumbnailURL>http://www.1000steine.com/brickset/thumbs/tn_0928-1_jpg.jpg</thumbnailURL>
+<imageURL>http://www.1000steine.com/brickset/images/0928-1.jpg</imageURL>
+<bricksetURL>http://www.brickset.com/detail/?Set=928-1</bricksetURL>
+<own>false</own>
+<want>false</want>
+<qtyOwned>0</qtyOwned>
+<userNotes/>
+<UKRetailPrice/>
+<USRetailPrice/>
+<CARetailPrice/>
+<instructionsAvailable>false</instructionsAvailable>
+<EAN/>
+<UPC/>
+<lastUpdated>2007-06-30T08:23:56</lastUpdated>
+</setData>
+</ArrayOfSetData>
