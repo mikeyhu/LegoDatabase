@@ -1,12 +1,12 @@
 xml2js = require 'xml2js'
 http = require 'http'
-
+mongostore = require '../mongostore.coffee'
 
 #example url:
 #	http://www.brickset.com/webservices/brickset.asmx/search?apiKey=&userHash=&query=&theme=&subtheme=&year=&owned=&wanted=&setNumber=10030-1
-exports.url = (urlGenerator)-> "http://www.brickset.com/webservices/brickset.asmx/search?apiKey=&userHash=&query=&theme=&subtheme=&year=&owned=&wanted=&setNumber=#{urlGenerator}-1"
+exports.url = (setNumber)-> "http://www.brickset.com/webservices/brickset.asmx/search?apiKey=&userHash=&query=&theme=&subtheme=&year=&owned=&wanted=&setNumber=#{setNumber}-1"
 
-exports.createBulkCollector = (urlGenerator)->
+exports.createBulkCollector = (connectionString, urlGenerator)->
 
 	setInformation:(setNumber,fun)->
 		@requestSetXml setNumber,(data)=>
@@ -34,3 +34,8 @@ exports.createBulkCollector = (urlGenerator)->
 				listOfResults.push result 
 				process.nextTick ()=>
 					@collectSets listOfSetNumbers,fun,current+1,listOfResults
+
+	insertSets:(listOfSetNumbers,fun)->
+		@collectSets listOfSetNumbers,(err,listOfResults)->
+			ms = mongostore.createMongostore connectionString
+			ms.insert listOfResults,fun

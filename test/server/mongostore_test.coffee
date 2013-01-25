@@ -17,3 +17,4 @@ describe 'A mongodb store', ->
 			result[0].name.should.equal("mike")
 			should.exist(result[0]._id)
 			done()
+	

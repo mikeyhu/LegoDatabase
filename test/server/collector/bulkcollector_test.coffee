@@ -1,11 +1,12 @@
 bulkcollector = require '../../../src/server/collector/bulkcollector.coffee'
-require 'should'
+should = require 'should'
 require './fakesetserver.coffee'
 fs = require 'fs'
 
 describe 'A bulk collector', ->
 	beforeEach () ->
-		@bc = bulkcollector.createBulkCollector (urlGenerator)-> "http://localhost:7777/#{urlGenerator}.xml"
+		connectionString = "mongodb://localhost:27017/legodb"
+		@bc = bulkcollector.createBulkCollector connectionString,(setNumber)-> "http://localhost:7777/#{setNumber}.xml"
 
 	it 'should be able to parse the lego set XML', (done)->
 		fs.readFile __dirname + '/resources/test.xml','utf8', (err, data)=>
@@ -34,4 +35,10 @@ describe 'A bulk collector', ->
 			result.length.should.equal(2)
 			result[0].number.should.eql(["10030"])
 			result[1].number.should.eql(["928"])
+			done()
+	it 'should be able to insert data into a mongodb',(done)->
+		@bc.insertSets ["10030","928"],(err,result)->
+			console.log err
+			console.log result
+			#should.exist(result[0]._id)
 			done()
