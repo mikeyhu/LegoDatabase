@@ -1,7 +1,7 @@
 mongostore = require '../../src/server/mongostore.coffee'
 should = require 'should'
 
-connectionString = "mongodb://localhost:27017/legodb"
+connectionString = "mongodb://localhost:27000/legodb"
 
 describe 'A mongodb store', ->
 	beforeEach () ->
@@ -17,4 +17,3 @@ describe 'A mongodb store', ->
 			result[0].name.should.equal("mike")
 			should.exist(result[0]._id)
 			done()
-	

@@ -5,7 +5,7 @@ fs = require 'fs'
 
 describe 'A bulk collector', ->
 	beforeEach () ->
-		connectionString = "mongodb://localhost:27017/legodb"
+		connectionString = "mongodb://localhost:27000/legodb"
 		@bc = bulkcollector.createBulkCollector connectionString,(setNumber)-> "http://localhost:7777/#{setNumber}.xml"
 
 	it 'should be able to parse the lego set XML', (done)->
