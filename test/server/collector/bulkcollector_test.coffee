@@ -38,7 +38,5 @@ describe 'A bulk collector', ->
 			done()
 	it 'should be able to insert data into a mongodb',(done)->
 		@bc.insertSets ["10030","928"],(err,result)->
-			console.log err
-			console.log result
-			#should.exist(result[0]._id)
+			should.exist(result[0]._id)
 			done()
