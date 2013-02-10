@@ -8,5 +8,6 @@ stdin = process.openStdin()
 stdin.on 'data', (buffer) ->
 	data = buffer.toString().split("\n") if buffer
 stdin.on 'end', ->
-	#console.log data.length
 	bc.insertSets data,(err,result)->
+		throw err if err
+		console.log 'Finished inserting documents'
