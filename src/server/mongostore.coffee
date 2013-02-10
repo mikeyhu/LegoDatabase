@@ -31,8 +31,3 @@ exports.createMongostore = (connectionString)->
 		@connect (err,collection)->
 			throw err if err
 			collection.aggregate [{$group:{_id:"$"+facetName,count:{$sum:1}}},{$sort:{count:-1}}],[],fun
-
-
-
-# example aggregation query to do facet on theme:
-# db.LegoSets.aggregate({$group:{_id:"$theme", count: {$sum:1}}},{$sort: {count:-1}})
