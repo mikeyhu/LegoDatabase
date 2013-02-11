@@ -11,7 +11,6 @@ exports.createMongostore = (connectionString)->
 			collection = db.collection collectionName
 			fun null,collection
 
-
 	clear:(fun)->
 		@connect (err,collection)->
 			throw err if err
