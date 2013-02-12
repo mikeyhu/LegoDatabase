@@ -26,6 +26,12 @@ exports.createMongostore = (connectionString)->
 			throw err if err
 			collection.insert data,{w:1},fun
 
+	getSets:(fun)->
+		@connect (err,collection)->
+			fun err,null if err
+			collection.find().toArray fun
+
+
 	getFacet:(facetName,fun)->
 		@connect (err,collection)->
 			throw err if err

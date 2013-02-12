@@ -38,5 +38,14 @@ describe 'A mongodb store', ->
 				for facet in result when facet._id=="Star Wars" 
 					facet.count.should.equal 2
 				done()
-				
-
+	
+	it 'should be able to get Set information', (done)->
+		data = [
+				{"theme":"Star Wars"},
+				{"theme":"Star Wars"},
+				{"theme":"Space"}]			
+		@ms.insert data,(err,result)=>
+			@ms.getSets (err,result)->
+				result.length.should.equal 3
+				result[0].theme.should.equal "Star Wars"
+				done()
