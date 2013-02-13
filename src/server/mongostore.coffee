@@ -31,7 +31,6 @@ exports.createMongostore = (connectionString)->
 			fun err,null if err
 			collection.find().toArray fun
 
-
 	getFacet:(facetName,fun)->
 		@connect (err,collection)->
 			throw err if err

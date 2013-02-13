@@ -1,0 +1,17 @@
+extend layout
+block content
+  ul
+    each s in searchResults.sets
+      li
+        span= s.setName
+block facet
+  ul.facet
+    each f in searchResults.theme
+      li
+        span.facet-name= f._id
+        span.facet-amount= f.count
+  ul.facet
+    each f in searchResults.year
+      li
+        span.facet-name= f._id
+        span.facet-amount= f.count

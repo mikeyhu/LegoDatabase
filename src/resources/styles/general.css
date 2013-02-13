@@ -1,0 +1,46 @@
+body {
+	width:1000px;
+	margin: 0 auto;
+}
+header,footer {
+	clear: both;
+	width:800px;
+	background-color: #eee;
+}
+.main-content {
+	float:right;
+	width:800px;
+}
+.sidebar {
+	float:left;
+	width:200px;
+}
+.facet {
+    border: 1px solid gainsboro;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04);
+    margin-top: 13px;
+    padding-left:0;
+}
+.facet-name {
+	margin: 7px 0px 0px 5px;
+	display: block;
+    bottom: 5px;
+    position: relative;
+}
+.facet-amount {
+    bottom: 5px;
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+}
+ul {
+    list-style: none outside none;
+}
+li {
+    display: list-item;
+}
+.facet li {
+    border-top: 1px solid #E9E9E9;
+    font-size: 0.84615em;
+    position: relative;
+}
