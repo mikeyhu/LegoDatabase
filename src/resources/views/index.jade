@@ -3,7 +3,9 @@ block content
   ul
     each s in searchResults.sets
       li
-        span= s.setName
+        .set
+          span.setName= s.setName
+          img(src=s.thumbnailURL)
 block facet
   ul.facet
     each f in searchResults.theme

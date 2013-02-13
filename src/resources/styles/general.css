@@ -15,11 +15,22 @@ header,footer {
 	float:left;
 	width:200px;
 }
+
+ul {
+    list-style: none outside none;
+}
+li {
+    display: list-item;
+}
 .facet {
-    border: 1px solid gainsboro;
+    border: 1px solid #BBBBBB;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04);
     margin-top: 13px;
     padding-left:0;
+}
+.facet li {
+    border-top: 1px solid #E9E9E9;
+    position: relative;
 }
 .facet-name {
 	margin: 7px 0px 0px 5px;
@@ -31,16 +42,16 @@ header,footer {
     bottom: 5px;
     position: absolute;
     right: 10px;
-    z-index: 2;
 }
-ul {
-    list-style: none outside none;
+.set {
+	border:1px solid #BBBBBB;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04);
+	float: left;
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	margin: 0px 10px 10px 0px;
 }
-li {
-    display: list-item;
-}
-.facet li {
-    border-top: 1px solid #E9E9E9;
-    font-size: 0.84615em;
-    position: relative;
+.setName {
+	width: 100px;
 }
