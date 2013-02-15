@@ -7,13 +7,17 @@ block content
           span.setName= s.setName
           img(src=s.thumbnailURL)
 block facet
-  ul.facet
-    each f in searchResults.theme
-      li
-        span.facet-name= f._id
-        span.facet-amount= f.count
-  ul.facet
-    each f in searchResults.year
-      li
-        span.facet-name= f._id
-        span.facet-amount= f.count
+  .facet
+    div Theme
+    ul
+      each f in searchResults.theme
+        li
+          span.facet-name= f._id
+          span.facet-amount= f.count
+  .facet
+    div Year
+    ul
+      each f in searchResults.year
+        li
+          span.facet-name= f._id
+          span.facet-amount= f.count

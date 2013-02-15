@@ -1,11 +1,12 @@
 body {
 	width:1000px;
 	margin: 0 auto;
+	font: 12pt Georgia, serif;
 }
 header,footer {
 	clear: both;
 	width:800px;
-	background-color: #eee;
+	background-color: #EEE;
 }
 .main-content {
 	float:right;
@@ -26,7 +27,14 @@ li {
     border: 1px solid #BBBBBB;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04);
     margin-top: 13px;
-    padding-left:0;
+}
+.facet div {
+	padding:2px;
+	background-color: #EEE;
+	border-bottom: 1px solid #BBBBBB;
+}
+.facet ul {
+	padding-left:0;
 }
 .facet li {
     border-top: 1px solid #E9E9E9;
@@ -47,11 +55,18 @@ li {
 	border:1px solid #BBBBBB;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04);
 	float: left;
-	width: 100px;
-	height: 100px;
-	padding: 10px;
+	width: 120px;
+	height: 120px;
 	margin: 0px 10px 10px 0px;
 }
+.set img {
+	padding: 10px;
+}
 .setName {
-	width: 100px;
+	padding-left:2px;
+	display:block;
+	background-color: #EEE;
+	width: 118px;
+	border-bottom: 1px solid #BBBBBB;
+	font-size: 10pt;
 }
