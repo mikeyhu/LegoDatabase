@@ -1,23 +1,14 @@
 extend layout
 block content
-  ul
-    each s in searchResults.sets
-      li
-        .set
-          span.setName= s.setName
-          img(src=s.thumbnailURL)
+  each s in searchResults.sets
+    .set
+      span.setName= s.setName
+      img(src=s.thumbnailURL)
 block facet
-  .facet
-    div Theme
-    ul
-      each f in searchResults.theme
-        li
-          span.facet-name= f._id
-          span.facet-amount= f.count
-  .facet
-    div Year
-    ul
-      each f in searchResults.year
-        li
-          span.facet-name= f._id
-          span.facet-amount= f.count
+  facetName = "Theme"
+  facet = searchResults.theme
+  include facet
+
+  facetName = "Year"
+  facet = searchResults.year
+  include facet

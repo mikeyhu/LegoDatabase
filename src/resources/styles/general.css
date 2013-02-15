@@ -9,12 +9,13 @@ header,footer {
 	background-color: #EEE;
 }
 .main-content {
-	float:right;
-	width:800px;
+	float:left;
+	width:660px;
 }
 .sidebar {
 	float:left;
 	width:200px;
+	margin-right:10px;
 }
 
 ul {
@@ -26,18 +27,18 @@ li {
 .facet {
     border: 1px solid #BBBBBB;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04);
-    margin-top: 13px;
+    margin-bottom: 10px;
 }
 .facet div {
 	padding:2px;
 	background-color: #EEE;
-	border-bottom: 1px solid #BBBBBB;
 }
 .facet ul {
-	padding-left:0;
+	margin:0px;
+	padding:0px;
 }
 .facet li {
-    border-top: 1px solid #E9E9E9;
+    border-top: 1px solid #BBBBBB;
     position: relative;
 }
 .facet-name {
