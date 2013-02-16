@@ -2,7 +2,8 @@ express = require 'express'
 mongostore = require './mongostore.coffee'
 domain = require './domain.coffee'
 
-connectionString = "mongodb://localhost:27017/legodb"
+mongoPort = process.env.MONGOPORT or 27017
+connectionString = "mongodb://localhost:#{mongoPort}/legodb"
 
 app = express()
 
