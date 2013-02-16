@@ -6,9 +6,11 @@ block content
       img(src=s.thumbnailURL)
 block facet
   facetName = "Theme"
+  facetQuery = "theme"
   facet = searchResults.theme
   include facet
 
   facetName = "Year"
+  facetQuery = "year"
   facet = searchResults.year
   include facet

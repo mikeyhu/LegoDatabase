@@ -17,7 +17,7 @@ describe 'A domain', ->
 			{"setID":"333","setName":"Alien","theme":"Space","year":"1998"}]
 		@ms.insert data,(err,result)=>
 			d = domain.createSearch(@ms)
-			d.getResults (err,result)->
+			d.getResults null,(err,result)->
 				result.sets.length.should.equal 3
 				result.sets[0].setID.should.equal "111"
 				result.theme.should.eql [{_id:"Star Wars",count:2},{_id:"Space",count:1}]

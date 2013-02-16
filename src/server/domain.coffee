@@ -2,7 +2,7 @@ _ = require 'underscore'
 
 exports.createSearch = (mongostore)->
 
-	getResults:(fun)->
+	getResults:(search,fun)->
 		res = {}
 		facets = ["theme","year"]
 
@@ -10,6 +10,6 @@ exports.createSearch = (mongostore)->
 			res[facetName] = results
 			fun(null,res) if _.keys(res).length == expected
 
-		mongostore.getSets fin("sets",facets.length+1)
+		mongostore.getSets search, fin("sets",facets.length+1)
 		for facet in facets
-			mongostore.getFacet facet, fin(facet,facets.length+1)
+			mongostore.getFacet search, facet, fin(facet,facets.length+1)

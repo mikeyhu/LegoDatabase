@@ -18,9 +18,9 @@ port = process.env.PORT or 5555
 
 app.get '/', (req, res)->
 	search = domain.createSearch mongostore.createMongostore(connectionString)
-	search.getResults (err,result)=>
+	search.getResults req.query,(err,result)=>
 		res.send err if err
 		res.render('index',{title:"Your Lego Sets",searchResults:result})
 
 # Start Server
-app.listen port, -> console.log "Listening on #{port}\nPress CTRL-C to stop server."
+app.listen port, -> console.log "LegoDatabase server is listening on #{port}\nPress CTRL-C to stop server."

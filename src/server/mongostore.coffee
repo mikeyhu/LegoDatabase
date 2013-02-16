@@ -26,12 +26,12 @@ exports.createMongostore = (connectionString)->
 			fun err,null if err
 			collection.insert data,{w:1},fun
 
-	getSets:(fun)->
+	getSets:(search,fun)->
 		@connect (err,collection)->
 			fun err,null if err
-			collection.find().toArray fun
+			collection.find(search).toArray fun
 
-	getFacet:(facetName,fun)->
+	getFacet:(search,facetName,fun)->
 		@connect (err,collection)->
 			fun err,null if err
 			collection.aggregate [{$group:{_id:"$"+facetName,count:{$sum:1}}},{$sort:{count:-1}}],[],fun
