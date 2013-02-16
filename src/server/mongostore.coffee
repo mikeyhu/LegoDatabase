@@ -13,7 +13,7 @@ exports.createMongostore = (connectionString)->
 
 	clear:(fun)->
 		@connect (err,collection)->
-			throw err if err
+			fun err,null if err
 			collection.remove {},fun
 
 	count:(fun)->
@@ -23,7 +23,7 @@ exports.createMongostore = (connectionString)->
 
 	insert:(data,fun)->
 		@connect (err,collection)->
-			throw err if err
+			fun err,null if err
 			collection.insert data,{w:1},fun
 
 	getSets:(fun)->
@@ -33,5 +33,5 @@ exports.createMongostore = (connectionString)->
 
 	getFacet:(facetName,fun)->
 		@connect (err,collection)->
-			throw err if err
+			fun err,null if err
 			collection.aggregate [{$group:{_id:"$"+facetName,count:{$sum:1}}},{$sort:{count:-1}}],[],fun
