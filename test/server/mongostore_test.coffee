@@ -41,7 +41,11 @@ describe 'A mongodb store', ->
 				done()
 	
 	it 'should be able to get facet information with an existing facet search', (done)->
-		done()
+		@ms.insert setData,(err,result)=>
+			facets={"year":"1996"}
+			@ms.getFacet facets,"theme",(err,result)->
+				result.length.should.equal 1
+				done()
 
 	it 'should be able to get Set information', (done)->			
 		@ms.insert setData,(err,result)=>

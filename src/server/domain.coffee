@@ -7,6 +7,7 @@ exports.createSearch = (mongostore)->
 		facets = ["theme","year"]
 
 		fin = (facetName,expected)->(err,results)->
+			fun(err,res) if err
 			res[facetName] = results
 			fun(null,res) if _.keys(res).length == expected
 

@@ -34,4 +34,7 @@ exports.createMongostore = (connectionString)->
 	getFacet:(search,facetName,fun)->
 		@connect (err,collection)->
 			fun err,null if err
-			collection.aggregate [{$group:{_id:"$"+facetName,count:{$sum:1}}},{$sort:{count:-1}}],[],fun
+			query=
+				if search? then [{$match:search}]
+				else []
+			collection.aggregate query.concat([{$group:{_id:"$"+facetName,count:{$sum:1}}},{$sort:{count:-1}}]),[],fun

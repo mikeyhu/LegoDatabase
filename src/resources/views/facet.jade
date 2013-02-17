@@ -1,8 +1,9 @@
 .facet
   div=facetName
   ul
-    each f in facet
-      li
-        a(href="/?#{facetQuery}=#{f._id}")
-          span.facet-name= f._id
-          span.facet-amount= f.count
+    - if (facet.length)
+      each f in facet
+        li
+          a(href="/?#{facetQuery}=#{f._id}")
+            span.facet-name= f._id
+            span.facet-amount= f.count
