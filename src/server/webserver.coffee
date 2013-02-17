@@ -1,5 +1,6 @@
 express = require 'express'
 mongostore = require './mongostore.coffee'
+query = require './query.coffee'
 domain = require './domain.coffee'
 
 mongoPort = process.env.MONGOPORT or 27017
@@ -20,7 +21,7 @@ app.get '/', (req, res)->
 	search = domain.createSearch mongostore.createMongostore(connectionString)
 	search.getResults req.query,(err,result)=>
 		res.send err if err
-		res.render('index',{title:"Your Lego Sets",searchResults:result})
+		res.render('index',{title:"Your Lego Sets",searchResults:result,query:query.createQuery(req.query)})
 
 # Start Server
 app.listen port, -> console.log "LegoDatabase server is listening on #{port}\nPress CTRL-C to stop server."
