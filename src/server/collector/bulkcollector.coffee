@@ -9,14 +9,18 @@ exports.url = (setNumber)-> "http://www.brickset.com/webservices/brickset.asmx/s
 exports.createBulkCollector = (connectionString, urlGenerator)->
 
 	setInformation:(setNumber,fun)->
+		console.log "Retrieving:#{setNumber}"
 		@requestSetXml setNumber,(data)=>
 			@parseXml data,fun
 
 	requestSetXml:(setNumber,fun)->
+		data=""
 		http.get urlGenerator(setNumber), (res) ->
 			res.setEncoding('utf8')
 			res.on 'data', (chunk)->
-				fun(chunk)
+				data=data+chunk
+			res.on 'end', ()->
+				fun(data)
 		.on 'error', (e)->	
 			console.log("Got error: " + e.message)
 
