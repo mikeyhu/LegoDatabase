@@ -1,6 +1,7 @@
 xml2js = require 'xml2js'
 http = require 'http'
 mongostore = require '../mongostore.coffee'
+_ = require 'underscore'
 
 #example url:
 #	http://www.brickset.com/webservices/brickset.asmx/search?apiKey=&userHash=&query=&theme=&subtheme=&year=&owned=&wanted=&setNumber=10030-1
@@ -28,7 +29,9 @@ exports.createBulkCollector = (connectionString, urlGenerator)->
 		parser = new xml2js.Parser()
 		parser.parseString data, (err,result)->
 			throw err if err
-			fun(err,result?.ArrayOfSetData.setData[0])
+			set = _.pick result?.ArrayOfSetData.setData[0],
+				'number','setName','year','theme','subtheme','pieces','minifigs','thumbnailURL'
+			fun(err,set)
 
 	collectSets:(listOfSetNumbers,fun,current=0,listOfResults=[])->
 		if listOfSetNumbers.length <= current then fun(null,listOfResults)
