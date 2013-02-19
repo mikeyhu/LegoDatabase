@@ -7,6 +7,14 @@ The project has two parts:
 
 * Run a webserver to display your sets using facets, these are generated using MongoDBs aggregation framework.
 
+Install
+-------
+
+You'll need to install nodejs, mongodb and npm on your system. Once done you need to:
+
+	npm install -g coffee-script mocha
+	npm install
+	
 Usage
 -----
 To put data into MongoDB from Brickset and then start the site, just use:
